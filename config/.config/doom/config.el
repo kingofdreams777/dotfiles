@@ -27,8 +27,6 @@
 (setq lsp-inlay-hint-enable t)
 
 ;; transparent background
-(set-frame-parameter nil 'alpha-background 95)
-(add-to-list 'default-frame-alist '(alpha-background . 95))
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
 
 
