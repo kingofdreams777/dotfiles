@@ -29,7 +29,11 @@
 ;;whitespace mode
 (setq global-whitespace-mode +1)
 
-;; transparent background
+;;global 80 char line
+(global-display-fill-column-indicator-mode +1)
+
+(setq company-idle-delay nil)
+
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
 
 
