@@ -7,6 +7,8 @@ export QT_QPA_PLATFORM=wayland
 export QT_STYLE_OVERRIDE=kvantum
 export GDK_BACKEND=wayland
 export RUST_BACKTRACE=1
+export XDG_CURRENT_DESKTOP=Hyprland
+export XDG_DESKTOP_TYPE=wayland
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

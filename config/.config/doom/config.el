@@ -26,6 +26,9 @@
 ;; inlay hints lsp
 (setq lsp-inlay-hint-enable t)
 
+;;whitespace mode
+(setq global-whitespace-mode +1)
+
 ;; transparent background
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
 
@@ -40,16 +43,20 @@
   (set-company-backend! 'rustic)
   (tree-sitter!))
 
-(after! vue-mode
-  (set-company-backend! 'vue-mode)
-  (add-hook! 'vue-mode-hook #'lsp)
-  (tree-sitter!))
-
 (use-package! lsp-tailwindcss
   :init
   (setq lsp-tailwindcss-add-on-mode t))
 
-(setq +tree-sitter-hl-enabled-modes '(rust-mode vue-mode web-mode))
+(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
+
+(treemacs-project-follow-mode +1)
+
+(load! "~/development/bun-mode/bun-mode.el")
+
+(add-hook! web-mode-hook
+  (setq lsp-volar-take-over-mode t))
+
+(setq +tree-sitter-hl-enabled-modes '(rustic web-mode typescript-mode javascript-mode web-mode))
 
 (setq dap-auto-configure-mode t)
 
